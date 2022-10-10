@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+         controllerName="cap.fin.ap.project1.controller.View1">
+    <Page title="{i18n>titleV1}">
+        <content>
+            <SearchField id="idSearch" search="onSearch"></SearchField>
+            <List id="idListNew" items="{/ProductSet}" 
+            growing="true" growingThreshold="10"
+            selectionChange="onListItemSelect" mode="SingleSelectMaster" delete="onDeleteItem">
+                <items>
+                    <ObjectListItem title="{NAME}" 
+                    intro="{CATEGORY}" 
+                    number="{PRICE}" numberUnit="{CURRENCY_CODE}" 
+                    icon="sap-icon://product"></ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button text="Add" icon="sap-icon://add" press="onAddProduct"></Button>
+            </Toolbar>
+        </footer>
+        <headerContent>
+            <Button icon="sap-icon://action" press="onGoTo" tooltip="go to next"></Button>
+        </headerContent>
+        <!-- <Button text="Go To Next" press="onGoTo"></Button> -->
+    </Page>
+</mvc:View>
